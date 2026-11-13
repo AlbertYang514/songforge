@@ -18,5 +18,13 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertYang514/songforge.git"
+  },
+  "homepage": "https://github.com/AlbertYang514/songforge#readme",
+  "bugs": {
+    "url": "https://github.com/AlbertYang514/songforge/issues"
   }
 }
