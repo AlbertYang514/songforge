@@ -1,6 +1,6 @@
 {
   "name": "songforge",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "A small local music laboratory: lyrics and a feeling in, a finished song out.",
   "license": "MIT",

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 — 2026-11-13
+
+- README is now fully bilingual (English and 中文).
+- License: MIT.
+
 ## 0.1.1 — 2026-11-13
 
 - `npm start` opens the local page automatically; set `SONGFORGE_OPEN=0` to disable.
