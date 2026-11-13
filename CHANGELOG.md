@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 — 2026-11-13
+
+- `npm start` opens the local page automatically; set `SONGFORGE_OPEN=0` to disable.
+- Added the macOS `SongForge.command` double-click launcher.
+
 ## 0.1.0 — 2026-11-13
 
 First public release.
