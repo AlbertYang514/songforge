@@ -13,7 +13,7 @@ const fs = require("fs");
 const fsp = require("fs/promises");
 const path = require("path");
 const os = require("os");
-const { spawn, execFile } = require("child_process");
+const { spawn, execFile, exec } = require("child_process");
 const crypto = require("crypto");
 
 const ROOT = __dirname;
@@ -719,11 +719,26 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
+function openBrowser(url) {
+  if (process.env.SONGFORGE_OPEN === "0") return;
+  const command = process.platform === "darwin"
+    ? `open "${url}"`
+    : process.platform === "win32"
+      ? `start "" "${url}"`
+      : `xdg-open "${url}"`;
+  exec(command, { timeout: 5000 }, () => {});
+}
+
 server.listen(PORT, HOST, () => {
-  console.log(`SongForge listening at http://${HOST}:${PORT}`);
+  const localURL = `http://${HOST === "0.0.0.0" || HOST === "::" ? "127.0.0.1" : HOST}:${PORT}`;
+  console.log(`SongForge listening at ${localURL}`);
   console.log(`Python renderer: ${PYTHON}`);
   console.log(`CHIMERA: ${CHIMERA}`);
   console.log("Local use only. Do not expose this port to the internet.");
+  if (process.env.SONGFORGE_OPEN !== "0") {
+    console.log(`Opening ${localURL}`);
+    openBrowser(localURL);
+  }
 });
 
 // expire old in-memory job records; rendered files stay on disk

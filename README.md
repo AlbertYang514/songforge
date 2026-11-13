@@ -70,7 +70,9 @@ python3.13 -m venv .venv
 npm start
 ```
 
-Open <http://127.0.0.1:4173>.
+`npm start` opens <http://127.0.0.1:4173> in the browser automatically. Set `SONGFORGE_OPEN=0` to disable that.
+
+On macOS you can also double-click `SongForge.command`. If the server is already running it simply opens the page; otherwise it starts the server first. The launcher is a convenience wrapper, not a second app.
 
 `server.js` automatically uses `.venv/bin/python` when it exists. Otherwise it uses `python3`.
 
@@ -103,6 +105,7 @@ All paths can be overridden with environment variables; nothing secret is stored
 | `FFMPEG_BIN` / `FFPROBE_BIN` | `ffmpeg` / `ffprobe` | Audio tools |
 | `SONGFORGE_DEFAULT_BASE_URL` | `https://api.openai.com/v1` | Page default |
 | `SONGFORGE_DEFAULT_MODEL` | `gpt-4.1-mini` | Page default |
+| `SONGFORGE_OPEN` | unset (enabled) | Set to `0` to stop `npm start` opening a browser |
 
 Example:
 
