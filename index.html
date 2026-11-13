@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3f0e7">
+<title>SongForge — 小型音乐实验室</title>
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #f3f0e7;
+    --paper-2: #faf8f1;
+    --ink: #191816;
+    --muted: #6f6a5f;
+    --faint: #9c9689;
+    --line: #d8d1c2;
+    --line-strong: #bdb5a4;
+    --accent: #24533f;
+    --accent-soft: #e2eadf;
+    --warn: #a43b25;
+    --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    --sans: "Inter", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "SFMono-Regular", "Roboto Mono", "IBM Plex Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent); color: var(--paper); }
+  a { color: var(--accent); }
+
+  .topbar, main, footer {
+    width: min(760px, calc(100% - 44px));
+    margin: 0 auto;
+  }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    padding: 25px 0 18px; border-bottom: 1px solid var(--line);
+  }
+  .brand {
+    color: var(--ink); text-decoration: none; font-family: var(--mono);
+    font-size: 11px; font-weight: 700; letter-spacing: .18em;
+  }
+  .brand span { color: var(--accent); }
+  .top-right { display: flex; align-items: center; gap: 15px; font-family: var(--mono); font-size: 9px; letter-spacing: .1em; color: var(--faint); }
+  .lang-switch { display: flex; border: 1px solid var(--line-strong); border-radius: 4px; overflow: hidden; }
+  .lang-switch button {
+    border: 0; background: transparent; color: var(--muted); padding: 4px 7px;
+    font-family: var(--mono); font-size: 8.5px; cursor: pointer;
+  }
+  .lang-switch button.active { background: var(--ink); color: var(--paper); }
+  .lang-switch button + button { border-left: 1px solid var(--line-strong); }
+
+  main { padding: 48px 0 30px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 13px;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 400; font-size: clamp(42px, 9vw, 68px);
+    line-height: .95; letter-spacing: -.04em; margin: 0 0 13px;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede { color: var(--muted); font-size: 13px; line-height: 1.7; max-width: 520px; margin: 0 0 38px; }
+  .lede strong { color: var(--ink); font-weight: 500; }
+
+  form { display: block; }
+  .field { margin: 0 0 22px; }
+  .field-head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 7px; }
+  label, .field-label {
+    display: block; font-family: var(--mono); font-size: 9px; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--ink);
+  }
+  .field-note { font-family: var(--mono); font-size: 8.5px; letter-spacing: .07em; color: var(--faint); text-transform: uppercase; }
+  .field-note b { color: var(--muted); font-weight: 400; }
+  textarea, input[type="text"], input[type="password"], select {
+    width: 100%; color: var(--ink); background: var(--paper-2);
+    border: 1px solid var(--line); border-radius: 4px; outline: none;
+    font-family: var(--sans); font-size: 13.5px; line-height: 1.65;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  textarea { padding: 12px 13px; resize: vertical; min-height: 178px; }
+  #feeling { min-height: 88px; }
+  textarea::placeholder, input::placeholder { color: #a49e91; }
+  textarea:focus, input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+  .sample-link {
+    border: 0; background: transparent; color: var(--muted); padding: 0; cursor: pointer;
+    font-family: var(--mono); font-size: 8.5px; letter-spacing: .06em; text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .sample-link:hover { color: var(--accent); }
+
+  .control-row { display: grid; grid-template-columns: 180px 1fr; gap: 26px; align-items: start; margin-bottom: 22px; }
+  .voice-control select {
+    appearance: none; width: 100%; padding: 8px 10px; font-family: var(--mono);
+    font-size: 9.5px; letter-spacing: .04em; text-transform: uppercase; border-radius: 4px;
+  }
+  .hint { margin: 7px 0 0; font-size: 10px; line-height: 1.5; color: var(--faint); }
+
+  .mix-panel { border-top: 1px solid var(--line); padding-top: 13px; }
+  .mix-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 11px; }
+  .mix-reset {
+    border: 0; background: transparent; color: var(--faint); font-family: var(--mono);
+    font-size: 8px; letter-spacing: .06em; cursor: pointer; text-decoration: underline;
+    text-underline-offset: 3px; padding: 0;
+  }
+  .mix-reset:hover { color: var(--accent); }
+  .mix-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .mix-control label {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 5px;
+    font-size: 8px; letter-spacing: .04em; color: var(--muted); margin-bottom: 6px;
+  }
+  .mix-control output { font-family: var(--mono); font-size: 8.5px; color: var(--accent); text-transform: none; }
+  .mix-control input[type="range"] { width: 100%; margin: 0; accent-color: var(--accent); cursor: ew-resize; }
+  .mix-note { margin: 9px 0 0; color: var(--faint); font-size: 9.5px; line-height: 1.5; }
+
+  .api { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 23px 0; }
+  .api summary { list-style: none; cursor: pointer; padding: 11px 0; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+  .api summary::-webkit-details-marker { display: none; }
+  .summary-left { display: flex; gap: 8px; align-items: baseline; font-family: var(--mono); font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .summary-left .state { color: var(--faint); font-size: 8px; }
+  .chevron { color: var(--faint); font-family: var(--mono); font-size: 10px; }
+  .api[open] summary { padding-bottom: 8px; }
+  .api-body { padding: 3px 0 14px; }
+  .api-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .mini-field label { margin-bottom: 5px; font-size: 8px; color: var(--muted); }
+  .mini-field input { padding: 7px 8px; font-family: var(--mono); font-size: 9px; border-radius: 3px; }
+  .mini-field.wide { grid-column: 1 / -1; }
+  .key-wrap { position: relative; }
+  .key-wrap input { padding-right: 39px; }
+  .reveal { position: absolute; right: 3px; top: 3px; height: 23px; border: 0; background: transparent; color: var(--faint); font-family: var(--mono); font-size: 7.5px; cursor: pointer; }
+  .reveal:hover { color: var(--accent); }
+  .test-row { display: flex; align-items: center; gap: 12px; margin-top: 11px; flex-wrap: wrap; }
+  .test-btn {
+    border: 1px solid var(--line-strong); background: transparent; color: var(--ink);
+    padding: 5px 8px; border-radius: 3px; font-family: var(--mono); font-size: 8px;
+    letter-spacing: .05em; cursor: pointer;
+  }
+  .test-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .test-btn:disabled { opacity: .45; cursor: wait; }
+  .test-status { font-size: 10px; color: var(--faint); line-height: 1.4; }
+  .test-status.ok { color: var(--accent); }
+  .test-status.bad { color: var(--warn); }
+  .privacy { margin: 10px 0 0; font-size: 10px; line-height: 1.55; color: var(--faint); }
+  .privacy b { color: var(--muted); font-weight: 500; }
+
+  .generate {
+    width: 100%; min-height: 48px; border: 1px solid var(--ink); border-radius: 4px;
+    background: var(--ink); color: var(--paper); display: flex; align-items: center;
+    justify-content: space-between; gap: 20px; padding: 0 17px; cursor: pointer;
+    font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase;
+    transition: background .15s, color .15s, opacity .15s;
+  }
+  .generate:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); }
+  .generate:disabled { opacity: .45; cursor: wait; }
+  .generate .arrow { font-family: var(--sans); font-size: 18px; }
+  .form-error { margin: 10px 0 0; color: var(--warn); font-size: 11px; line-height: 1.55; }
+  .form-error:empty { display: none; }
+
+  .session { border-top: 1px solid var(--line); margin-top: 38px; padding-top: 16px; }
+  .session-head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 12px; }
+  .session-label { font-family: var(--mono); font-size: 8.5px; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
+  .session-state { font-family: var(--mono); font-size: 8.5px; letter-spacing: .08em; color: var(--faint); text-transform: uppercase; }
+  .status-row { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin-bottom: 7px; }
+  .stage-label { font-family: var(--serif); font-size: 19px; line-height: 1.2; }
+  .percent { font-family: var(--mono); font-size: 9px; color: var(--muted); }
+  .progress-track { height: 3px; background: var(--line); overflow: hidden; }
+  .progress-bar { height: 100%; width: 0; background: var(--accent); transition: width .35s ease; }
+  .message { min-height: 17px; margin: 9px 0 0; font-size: 11px; line-height: 1.55; color: var(--muted); }
+  .error-box { margin-top: 14px; border-left: 2px solid var(--warn); padding: 2px 0 2px 10px; color: var(--warn); font-size: 11px; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .error-box[hidden] { display: none; }
+  .error-box b { display: block; font-family: var(--mono); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
+
+  .result { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 17px; }
+  .result[hidden] { display: none; }
+  .result-kicker { display: flex; justify-content: space-between; gap: 12px; font-family: var(--mono); font-size: 8px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+  .result h2 { font-family: var(--serif); font-weight: 400; font-size: 31px; letter-spacing: -.025em; margin: 8px 0 4px; }
+  .song-meta { font-family: var(--mono); font-size: 8.5px; letter-spacing: .03em; color: var(--muted); }
+  audio { width: 100%; margin: 13px 0 12px; accent-color: var(--accent); }
+  .downloads { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .dl { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; font-family: var(--mono); font-size: 8px; letter-spacing: .05em; text-transform: uppercase; }
+  .dl:hover { color: var(--accent); }
+  .dl.primary { color: var(--accent); font-weight: 700; }
+  .dl .down { display: none; }
+  .session-foot { margin-top: 18px; padding-top: 10px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; color: var(--faint); font-family: var(--mono); font-size: 7.5px; letter-spacing: .07em; text-transform: uppercase; }
+
+  footer { border-top: 1px solid var(--line); padding: 15px 0 28px; display: flex; justify-content: space-between; gap: 18px; color: var(--faint); font-size: 9px; line-height: 1.5; }
+  footer a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 680px) {
+    .topbar, main, footer { width: calc(100% - 30px); }
+    .topbar { padding-top: 18px; }
+    .top-right { gap: 9px; }
+    .top-right .local-text { display: none; }
+    main { padding-top: 34px; }
+    h1 { font-size: 48px; }
+    .control-row { grid-template-columns: 1fr; gap: 16px; }
+    .api-grid { grid-template-columns: 1fr; }
+    .mini-field.wide { grid-column: auto; }
+    .mix-grid { gap: 10px; }
+    footer { flex-direction: column; gap: 5px; }
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">SONG<span>/</span>FORGE</a>
+    <div class="top-right">
+      <span class="local-text" id="localLabel">LOCAL SESSION</span>
+      <span class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="zh" class="active">中文</button>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="eyebrow" id="eyebrow">A small music laboratory · 001</div>
+      <h1 id="page-title">SongForge</h1>
+      <p class="lede" id="lede">Write a lyric, describe the feeling, and make a finished song.</p>
+    </section>
+
+    <form id="songForm" novalidate>
+      <div class="field">
+        <div class="field-head">
+          <label for="lyrics" id="lyricsLabel">Lyrics</label>
+          <span class="field-note" id="lyricMeta"><b>0</b> lines</span>
+        </div>
+        <textarea id="lyrics" name="lyrics" spellcheck="false" placeholder="Streetlights hum on an empty street&#10;I count the cracks beneath my feet&#10;Your coat is gone but the hallway smells like rain&#10;I keep the porch light on again"></textarea>
+        <button type="button" class="sample-link" id="sampleBtn" style="margin-top:7px;">use a sample</button>
+      </div>
+
+      <div class="field">
+        <div class="field-head">
+          <label for="feeling" id="feelingLabel">Feeling &amp; arrangement</label>
+          <span class="field-note" id="feelingNote">NATURAL LANGUAGE</span>
+        </div>
+        <textarea id="feeling" name="feeling" placeholder="A bittersweet English indie-pop song at a walking pace. Piano and clean guitar, a bass line that moves, brushed drums in the verse and a wider chorus. Keep the vocal intimate and a little tired; let the last chorus open up."></textarea>
+      </div>
+
+      <div class="control-row">
+        <div class="voice-control">
+          <label for="voice" id="voiceLabel">Lead voice</label>
+          <select id="voice" name="voice" aria-label="Lead voice" style="margin-top:7px;">
+            <option value="female" id="voiceFemale">Female · CHIMERA</option>
+            <option value="male" id="voiceMale" selected>Male · CHIMERA</option>
+          </select>
+          <p class="hint" id="voiceHint">CHIMERA sings only from real lyric syllables.</p>
+        </div>
+
+        <div class="mix-panel">
+          <div class="mix-head">
+            <span class="field-label" id="mixLabel">Mix balance</span>
+            <button type="button" class="mix-reset" id="mixReset">reset</button>
+          </div>
+          <div class="mix-grid">
+            <div class="mix-control">
+              <label for="mixVocal" id="mixVocalLabel">Vocal <output id="mixVocalVal">+2 dB</output></label>
+              <input id="mixVocal" type="range" min="-18" max="6" step="1" value="2">
+            </div>
+            <div class="mix-control">
+              <label for="mixHarmony" id="mixHarmonyLabel">Harmony <output id="mixHarmonyVal">-12 dB</output></label>
+              <input id="mixHarmony" type="range" min="-24" max="-6" step="1" value="-12">
+            </div>
+            <div class="mix-control">
+              <label for="mixInst" id="mixInstLabel">Band <output id="mixInstVal">-1.5 dB</output></label>
+              <input id="mixInst" type="range" min="-12" max="6" step="0.5" value="-1.5">
+            </div>
+          </div>
+          <p class="mix-note" id="mixNote">Vocal +2 dB, harmony −12 dB, band −1.5 dB. Raise the vocal if the lyric should sit closer.</p>
+        </div>
+      </div>
+
+      <details class="api" id="apiPanel">
+        <summary>
+          <span class="summary-left"><span id="apiSettingsLabel">API settings</span> <span class="state" id="apiSummaryState">OPENAI-COMPATIBLE</span></span>
+          <span class="chevron">＋</span>
+        </summary>
+        <div class="api-body">
+          <div class="api-grid">
+            <div class="mini-field wide">
+              <label for="baseURL" id="baseLabel">Base URL</label>
+              <input id="baseURL" type="text" value="https://api.openai.com/v1" autocomplete="off" spellcheck="false" placeholder="https://api.openai.com/v1">
+            </div>
+            <div class="mini-field">
+              <label for="model" id="modelLabel">Model</label>
+              <input id="model" type="text" value="gpt-4.1-mini" autocomplete="off" spellcheck="false" placeholder="gpt-4.1-mini">
+            </div>
+            <div class="mini-field" style="grid-column: span 2;">
+              <label for="apiKey" id="keyLabel">API key</label>
+              <div class="key-wrap">
+                <input id="apiKey" type="password" autocomplete="new-password" spellcheck="false" placeholder="sk-…">
+                <button type="button" class="reveal" id="revealKey" aria-label="Show API key">SHOW</button>
+              </div>
+            </div>
+          </div>
+          <div class="test-row">
+            <button type="button" class="test-btn" id="testBtn">Test connection</button>
+            <span class="test-status" id="testStatus" role="status" aria-live="polite">Nothing sent yet.</span>
+          </div>
+          <p class="privacy" id="privacyNote"><b>Your key stays in this tab’s memory.</b> It is sent only to this local Node process for the request, never written to disk, localStorage, logs or the generated files.</p>
+        </div>
+      </details>
+
+      <button class="generate" id="generateBtn" type="submit">
+        <span id="generateLabel">Generate Song</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </button>
+      <p class="form-error" id="formError" role="alert"></p>
+    </form>
+
+    <section class="session" id="session" aria-label="Song session">
+      <div class="session-head">
+        <span class="session-label" id="sessionLabel">Session</span>
+        <span class="session-state" id="sessionState">IDLE</span>
+      </div>
+      <div class="status-row">
+        <span class="stage-label" id="stageLabel">The room is quiet.</span>
+        <span class="percent" id="percent">0%</span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-label="Song generation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <p class="message" id="message">Add a lyric and a feeling, then press Generate Song.</p>
+
+      <div class="error-box" id="errorBox" role="alert" hidden><b id="errorTitle">Session stopped</b><span id="errorText"></span></div>
+
+      <div class="result" id="result" hidden>
+        <div class="result-kicker"><span id="resultReady">Master · ready</span><span id="resultFormat">WAV 48k / MP3 192</span></div>
+        <h2 id="songTitle">Untitled</h2>
+        <div class="song-meta" id="songMeta"></div>
+        <div class="song-meta" id="mixInfo" style="margin-top:4px;color:var(--faint);"></div>
+        <audio id="player" controls preload="metadata"></audio>
+        <div class="downloads">
+          <a class="dl primary" id="dlMp3" href="#" download>MP3</a>
+          <a class="dl" id="dlWav" href="#" download>WAV</a>
+          <a class="dl" id="dlInst" href="#" download>Instrumental</a>
+          <a class="dl" id="dlArr" href="#" target="_blank" rel="noopener">Arrangement JSON</a>
+        </div>
+      </div>
+
+      <div class="session-foot"><span>SCAMP · CHIMERA · FFMPEG</span><span id="sessionFoot">NO NETWORK SEARCH</span></div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="footerBuilt">Built for <b>W—MORE</b> · a personal music lab</span>
+    <span id="footerPrivacy"><a href="/output/paper-lanterns/song.mp3" id="exampleLink">Male example ↗</a> · <a href="/output/paper-lanterns-female/song.mp3">Female example ↗</a> · keys stay in memory</span>
+  </footer>
+
+<script>
+
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const lyrics = $("lyrics");
+  const feeling = $("feeling");
+  const apiPanel = $("apiPanel");
+  const apiKey = $("apiKey");
+  const baseURL = $("baseURL");
+  const model = $("model");
+  const testBtn = $("testBtn");
+  const generateBtn = $("generateBtn");
+  const generateLabel = $("generateLabel");
+  const formError = $("formError");
+  const session = $("session");
+  const sessionState = $("sessionState");
+  const stageLabel = $("stageLabel");
+  const percent = $("percent");
+  const progressBar = $("progressBar");
+  const progressTrack = $("progressTrack");
+  const message = $("message");
+  const orbitCaption = $("orbitCaption");
+  const errorBox = $("errorBox");
+  const errorText = $("errorText");
+  const result = $("result");
+  const player = $("player");
+  const mixVocal = $("mixVocal");
+  const mixHarmony = $("mixHarmony");
+  const mixInst = $("mixInst");
+
+  let pollTimer = null;
+  let currentJob = null;
+  let keyVisible = false;
+  let currentProgress = 0;
+  let currentStageRaw = "";
+  let currentMessageRaw = "";
+  let sessionMode = "idle";
+  let genState = "idle";
+  let testState = { kind: "idle" };
+  let lastResult = null;
+  const urlLang = new URLSearchParams(location.search).get("lang");
+  let lang = urlLang === "zh" || urlLang === "en"
+    ? urlLang
+    : ((navigator.language || "en").toLowerCase().startsWith("zh") ? "zh" : "en");
+
+  const STRINGS = {
+    en: {
+      docTitle: "SongForge — a small music lab",
+      local: "LOCAL",
+      eyebrow: "A small music lab · 001",
+      title: "Song<em>Forge</em>",
+      lede: "Write a lyric, describe the feeling, and make a finished song.",
+      lyricsLabel: "Lyrics",
+      feelingLabel: "Feeling & arrangement",
+      feelingNote: "NATURAL LANGUAGE",
+      sample: "use a sample",
+      voiceLabel: "Lead voice",
+      voiceFemale: "Female · CHIMERA",
+      voiceMale: "Male · CHIMERA",
+      voiceHint: "CHIMERA sings only from real lyric syllables.",
+      mixLabel: "Mix balance",
+      mixVocal: "Vocal",
+      mixHarmony: "Harmony",
+      mixInst: "Band",
+      mixReset: "reset",
+      mixNote: "Vocal +2 dB, harmony −12 dB and band −1.5 dB by default. Lower the band or raise the vocal if the lyric needs to sit closer.",
+      apiSettings: "API settings",
+      apiState: "OPENAI-COMPATIBLE",
+      baseLabel: "Base URL",
+      modelLabel: "Model",
+      keyLabel: "API key",
+      showKey: "SHOW",
+      hideKey: "HIDE",
+      test: "Test connection",
+      testIdle: "Nothing sent yet.",
+      testTesting: "Testing the endpoint…",
+      testNoKey: "Add a key first.",
+      testOk: (ms, m) => `Connected · ${ms} ms · ${m}`,
+      privacy: "<b>Your key stays in this tab’s memory.</b> It is sent only to this local Node process for the request, never written to disk, localStorage, logs or the generated files. Refresh and it is gone.",
+      generate: "Generate Song",
+      generateWorking: "Forging…",
+      generateAnother: "Generate Another",
+      generateRetry: "Try Again",
+      sessionLabel: "Session",
+      states: { idle: "IDLE", busy: "WORKING", done: "READY", error: "STOPPED" },
+      stageIdle: "The room is quiet.",
+      messageIdle: "Add a lyric and a feeling, then press Generate Song.",
+      orbitIdle: "AWAITING A BRIEF",
+      orbitWorking: "WORKING IN THE ROOM",
+      orbitReady: "MASTER READY",
+      steps: ["Brief", "Compose", "Validate", "Band", "Voice", "Master"],
+      errorTitle: "Session stopped",
+      resultReady: "Master · ready",
+      resultFormat: "WAV 48k / MP3 192",
+      peak: (db) => ` · ${db} dB peak`,
+      songMeta: (r) => `${r.bpm || "—"} BPM · ${r.key || "—"} · ${formatDuration(r.duration)} · ${r.vocalNotes || 0} vocal notes`,
+      mp3: "MP3",
+      wav: "WAV",
+      inst: "Instrumental",
+      arr: "Arrangement JSON",
+      sessionFoot: "ARRANGEMENT SAVED",
+      sessionFootIdle: "NO NETWORK SEARCH",
+      footerBuilt: "Built for <b>W—MORE</b> · a personal music lab",
+      footerPrivacy: '<a href="/output/paper-lanterns/song.mp3" id="exampleLink">Male example ↗</a> · <a href="/output/paper-lanterns-female/song.mp3">Female example ↗</a> · keys stay in memory',
+      lineMeta: (n, w) => `<b>${n}</b> line${n === 1 ? "" : "s"}${w ? ` · ${w} word${w === 1 ? "" : "s"}` : ""}`,
+      lyricsPh: "Streetlights hum on an empty street\nI count the cracks beneath my feet\nYour coat is gone but the hallway smells like rain\nI keep the porch light on again",
+      feelingPh: "A bittersweet English indie-pop song at a walking pace. Piano and clean guitar, a bass line that moves, brushed drums in the verse and a wider chorus. Keep the vocal intimate and a little tired; let the last chorus open up.",
+      needLyrics: "Add some English lyrics first.",
+      needFeeling: "Describe the musical feeling you want.",
+      needKey: "Add an OpenAI-compatible API key in API Settings.",
+      needBase: "Add a Base URL.",
+      needModel: "Add a model name.",
+      nothingRendered: "Nothing was rendered.",
+      unknownError: "Something went wrong.",
+      readJobError: "Could not read the job status: ",
+      replaceSample: "Replace the current lyric with the sample?",
+      openingLab: "Opening the lab",
+      sendingBrief: "Sending the brief to your model.",
+      waitingFirst: "Waiting for the first response.",
+      ready: "Your song is ready.",
+      sessionStopped: "Session stopped",
+      tryAgain: "Try Again"
+    },
+    zh: {
+      docTitle: "SongForge — 小型音乐实验室",
+      local: "本地",
+      eyebrow: "小型音乐实验室 · 001",
+      title: "Song<em>Forge</em>",
+      lede: "写一段歌词，描述你想要的感觉，做成一首歌。",
+      lyricsLabel: "歌词",
+      feelingLabel: "音乐感觉与编曲",
+      feelingNote: "自然语言",
+      sample: "使用示例",
+      voiceLabel: "主唱声线",
+      voiceFemale: "女声 · CHIMERA",
+      voiceMale: "男声 · CHIMERA",
+      voiceHint: "CHIMERA 只根据真实歌词音节演唱。",
+      mixLabel: "混音平衡",
+      mixVocal: "主唱",
+      mixHarmony: "和声",
+      mixInst: "伴奏",
+      mixReset: "重置",
+      mixNote: "默认主唱 +2 dB、和声 −12 dB、伴奏 −1.5 dB。想让歌词更靠近耳边，可以提高主唱或降低伴奏。",
+      apiSettings: "API 设置",
+      apiState: "兼容 OPENAI",
+      baseLabel: "Base URL",
+      modelLabel: "模型",
+      keyLabel: "API Key",
+      showKey: "显示",
+      hideKey: "隐藏",
+      test: "测试连接",
+      testIdle: "还没有发送请求。",
+      testTesting: "正在测试接口…",
+      testNoKey: "请先填写 API Key。",
+      testOk: (ms, m) => `连接成功 · ${ms} ms · ${m}`,
+      privacy: "<b>密钥只存在于当前标签页的内存里。</b>它只会发送给本机 Node 进程用于本次请求，不会写入磁盘、localStorage、日志或生成文件。刷新页面后即消失。",
+      generate: "生成歌曲",
+      generateWorking: "正在制作…",
+      generateAnother: "再做一首",
+      generateRetry: "重试",
+      sessionLabel: "制作",
+      states: { idle: "空闲", busy: "制作中", done: "完成", error: "已停止" },
+      stageIdle: "房间还很安静。",
+      messageIdle: "写下歌词和感觉，然后点击生成歌曲。",
+      orbitIdle: "等待你的歌词",
+      orbitWorking: "正在房间里制作",
+      orbitReady: "母带已就绪",
+      steps: ["输入", "作曲", "校验", "乐队", "人声", "母带"],
+      errorTitle: "会话已停止",
+      resultReady: "母带 · 完成",
+      resultFormat: "WAV 48k / MP3 192",
+      peak: (db) => ` · 峰值 ${db} dB`,
+      songMeta: (r) => `${r.bpm || "—"} BPM · ${r.key || "—"} · ${formatDuration(r.duration)} · ${r.vocalNotes || 0} 个人声音符`,
+      mp3: "MP3",
+      wav: "WAV",
+      inst: "伴奏",
+      arr: "编曲 JSON",
+      sessionFoot: "编曲已保存",
+      sessionFootIdle: "不联网搜索",
+      footerBuilt: "为 <b>W—MORE</b> 而作 · 个人音乐实验室",
+      footerPrivacy: '<a href="/output/paper-lanterns/song.mp3" id="exampleLink">男声示例 ↗</a> · <a href="/output/paper-lanterns-female/song.mp3">女声示例 ↗</a> · 密钥只留在内存',
+      lineMeta: (n, w) => `<b>${n}</b> 行${w ? ` · ${w} 个词` : ""}`,
+      lyricsPh: "Streetlights hum on an empty street\nI count the cracks beneath my feet\nYour coat is gone but the hallway smells like rain\nI keep the porch light on again",
+      feelingPh: "一首苦涩但温柔的英文独立流行，走路的速度。钢琴和干净的电吉他，贝斯要有走动感，主歌用刷鼓，副歌打开。人声亲密、略带疲惫，最后一遍副歌放开一点。",
+      needLyrics: "请先写几句英文歌词。",
+      needFeeling: "请描述你想要的音乐感觉。",
+      needKey: "请在 API 设置里填写 API Key。",
+      needBase: "请填写 Base URL。",
+      needModel: "请填写模型名称。",
+      nothingRendered: "没有生成任何音频。",
+      unknownError: "出了点问题。",
+      readJobError: "无法读取任务状态：",
+      replaceSample: "用示例替换当前歌词？",
+      openingLab: "打开实验室",
+      sendingBrief: "正在把你的想法发给模型。",
+      waitingFirst: "等待第一次响应。",
+      ready: "歌曲已完成。",
+      sessionStopped: "会话已停止",
+      tryAgain: "重试"
+    }
+  };
+
+  const SERVER_ZH = {
+    "Preparing": "准备中",
+    "Reading the lyric": "读取歌词",
+    "Composing": "作曲",
+    "Checking the score": "校验乐谱",
+    "Performing": "演奏",
+    "Rendering": "渲染",
+    "Singing": "人声",
+    "Mixing": "混音",
+    "Mastering": "母带",
+    "Master ready": "母带完成",
+    "Error": "错误",
+    "Opening the lab": "打开实验室",
+    "Counting syllables with CHIMERA": "用 CHIMERA 拆分音节",
+    "Asking the model for a full arrangement": "请求模型编写完整编曲",
+    "The model is writing the song": "模型正在写歌",
+    "Fixing the arrangement with the model": "让模型修正编曲",
+    "Verifying syllables, bars and note ranges": "校验音节、小节与音域",
+    "SCAMP is writing the band parts": "SCAMP 正在编写乐队声部",
+    "Balancing the band": "平衡乐队音量",
+    "Teaching CHIMERA the melody": "教 CHIMERA 唱旋律",
+    "Adding a quiet harmony": "加入轻声和声",
+    "Mixing, EQ and limiting": "混音、EQ 与限幅",
+    "Encoding the MP3": "编码 MP3",
+    "Your song is ready": "歌曲已完成",
+    "Your song is ready.": "歌曲已完成。",
+    "The room is quiet.": "房间还很安静。",
+    "Sending the brief to your model.": "正在把你的想法发给模型。"
+  };
+
+  function t(key) { return STRINGS[lang][key]; }
+  function localizeServer(text) {
+    if (!text) return "";
+    return lang === "zh" ? (SERVER_ZH[text] || text) : text;
+  }
+  function setText(id, value) { const el = $(id); if (el) el.textContent = value; }
+  function setHTML(id, value) { const el = $(id); if (el) el.innerHTML = value; }
+
+  function linesOf(text) {
+    return text.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+  }
+
+  function formatDuration(seconds) {
+    const s = Math.max(0, Math.round(Number(seconds) || 0));
+    return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  }
+
+  function updateCount() {
+    const n = linesOf(lyrics.value).length;
+    const words = lyrics.value.trim() ? lyrics.value.trim().split(/\s+/).length : 0;
+    setHTML("lyricMeta", t("lineMeta")(n, words));
+  }
+
+  function dbLabel(value) {
+    const n = Number(value);
+    return `${n > 0 ? "+" : ""}${n} dB`;
+  }
+  function updateMixOutputs() {
+    $("mixVocalVal").textContent = dbLabel(mixVocal.value);
+    $("mixHarmonyVal").textContent = dbLabel(mixHarmony.value);
+    $("mixInstVal").textContent = dbLabel(mixInst.value);
+  }
+  function resetMix() {
+    mixVocal.value = "2";
+    mixHarmony.value = "-12";
+    mixInst.value = "-1.5";
+    updateMixOutputs();
+  }
+
+  function setError(text) {
+    if (!text) {
+      formError.textContent = "";
+      errorBox.hidden = true;
+      errorText.textContent = "";
+      return;
+    }
+    formError.textContent = text;
+    errorBox.hidden = false;
+    errorText.textContent = text;
+    errorBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function setSession(mode) {
+    sessionMode = mode;
+    renderSession();
+  }
+  function renderSession() {
+    sessionState.className = "session-state " + sessionMode;
+    sessionState.textContent = t("states")[sessionMode] || t("states").idle;
+  }
+
+  function setProgress(pct, label, msg) {
+    currentProgress = Math.max(0, Math.min(100, Math.round(Number(pct) || 0)));
+    if (label !== undefined && label !== null) currentStageRaw = label;
+    if (msg !== undefined && msg !== null) currentMessageRaw = msg;
+    renderProgress();
+  }
+  function renderProgress() {
+    progressBar.style.width = currentProgress + "%";
+    percent.textContent = currentProgress + "%";
+    progressTrack.setAttribute("aria-valuenow", String(currentProgress));
+    stageLabel.textContent = currentStageRaw ? localizeServer(currentStageRaw) : t("stageIdle");
+    message.textContent = currentMessageRaw ? localizeServer(currentMessageRaw) : t("messageIdle");
+    if (orbitCaption) orbitCaption.textContent = currentProgress >= 100 ? t("orbitReady") : currentProgress > 0 ? t("orbitWorking") : t("orbitIdle");
+    const order = ["brief", "compose", "validate", "band", "voice", "master"];
+    const thresholds = { brief: 0, compose: 10, validate: 28, band: 38, voice: 80, master: 92 };
+    let current = "brief";
+    for (const key of order) if (currentProgress >= thresholds[key]) current = key;
+    const currentIndex = order.indexOf(current);
+    document.querySelectorAll("#steps li").forEach((li, i) => {
+      li.textContent = t("steps")[i];
+      li.classList.toggle("passed", i < currentIndex);
+      li.classList.toggle("active", i === currentIndex && currentProgress < 100);
+    });
+    if (currentProgress >= 100) document.querySelectorAll("#steps li").forEach((li) => li.classList.remove("active"));
+  }
+
+  function setGenState(state) {
+    genState = state;
+    renderGenerateLabel();
+  }
+  function renderGenerateLabel() {
+    const map = { idle: "generate", working: "generateWorking", another: "generateAnother", retry: "generateRetry" };
+    generateLabel.textContent = t(map[genState] || "generate");
+    generateBtn.setAttribute("aria-label", generateLabel.textContent);
+  }
+
+  function setTestState(kind, data = {}) {
+    testState = { kind, ...data };
+    renderTestStatus();
+  }
+  function renderTestStatus() {
+    const el = $("testStatus");
+    el.classList.remove("ok", "bad");
+    if (testState.kind === "idle") {
+      el.textContent = t("testIdle");
+    } else if (testState.kind === "testing") {
+      el.textContent = t("testTesting");
+    } else if (testState.kind === "ok") {
+      el.classList.add("ok");
+      el.textContent = t("testOk")(testState.latencyMs, testState.model);
+    } else {
+      el.classList.add("bad");
+      el.textContent = testState.message || t("unknownError");
+    }
+  }
+
+  function resetResult() {
+    lastResult = null;
+    result.hidden = true;
+    player.pause();
+    player.removeAttribute("src");
+    player.load();
+    session.classList.remove("playing");
+    setText("sessionFoot", t("sessionFootIdle"));
+  }
+
+  function renderResult(r) {
+    result.hidden = false;
+    session.classList.remove("playing");
+    setText("songTitle", r.title || "Untitled");
+    setText("songMeta", t("songMeta")(r));
+    const mix = r.mix || {};
+    setText("mixInfo", `${t("mixVocal")} ${dbLabel(mix.vocal_gain_db ?? 2)} · ${t("mixHarmony")} ${dbLabel(mix.harmony_gain_db ?? -12)} · ${t("mixInst")} ${dbLabel(mix.instrumental_gain_db ?? -1.5)}`);
+    setText("resultFormat", `${t("resultFormat")}${r.peakDb != null ? t("peak")(Number(r.peakDb).toFixed(1)) : ""}`);
+    setText("resultReady", t("resultReady"));
+    setHTML("dlMp3", `<span class="down">↓</span> ${t("mp3")}`);
+    setHTML("dlWav", `<span class="down">↓</span> ${t("wav")}`);
+    setHTML("dlInst", `<span class="down">↓</span> ${t("inst")}`);
+    setHTML("dlArr", `<span class="down">↗</span> ${t("arr")}`);
+    $("dlMp3").href = r.files.mp3 + "?download=1";
+    $("dlWav").href = r.files.wav + "?download=1";
+    $("dlInst").href = r.files.instrumental + "?download=1";
+    $("dlArr").href = r.files.arrangement;
+    $("dlArr").download = "";
+    player.src = r.files.mp3;
+    setText("sessionFoot", t("sessionFoot"));
+  }
+
+  function showResult(job) {
+    if (!job.result) return;
+    lastResult = job.result;
+    renderResult(job.result);
+    setTimeout(() => result.scrollIntoView({ behavior: "smooth", block: "nearest" }), 180);
+  }
+
+  async function testConnection() {
+    const key = apiKey.value.trim();
+    if (!key) {
+      apiPanel.open = true;
+      apiKey.focus();
+      setTestState("bad", { message: t("testNoKey") });
+      return;
+    }
+    testBtn.disabled = true;
+    setTestState("testing");
+    try {
+      const response = await fetch("/api/test", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ baseURL: baseURL.value.trim(), apiKey: key, model: model.value.trim() }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.ok) throw new Error(data.error || `HTTP ${response.status}`);
+      setTestState("ok", { latencyMs: data.latencyMs, model: data.model || model.value.trim() });
+    } catch (error) {
+      setTestState("bad", { message: String(error.message || error).slice(0, 500) });
+    } finally {
+      testBtn.disabled = false;
+    }
+  }
+
+  async function pollJob(id) {
+    if (!currentJob || currentJob.id !== id) return;
+    try {
+      const response = await fetch(`/api/jobs/${id}`, { cache: "no-store" });
+      const job = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(job.error || `HTTP ${response.status}`);
+      currentJob = job;
+      if (job.status === "done") {
+        setProgress(100, "Master ready", "Your song is ready.");
+        setSession("done");
+        setGenState("another");
+        generateBtn.disabled = false;
+        showResult(job);
+        return;
+      }
+      if (job.status === "error") {
+        setSession("error");
+        setProgress(job.progress || 0, t("sessionStopped"), job.message || t("unknownError"));
+        setError(job.error || t("unknownError"));
+        setGenState("retry");
+        generateBtn.disabled = false;
+        return;
+      }
+      setSession("busy");
+      setProgress(job.progress || 0, job.stage || "", job.message || "");
+      pollTimer = setTimeout(() => pollJob(id), 1000);
+    } catch (error) {
+      setSession("error");
+      setError(t("readJobError") + String(error.message || error));
+      setGenState("retry");
+      generateBtn.disabled = false;
+    }
+  }
+
+  async function generate(event) {
+    event.preventDefault();
+    if (pollTimer) { clearTimeout(pollTimer); pollTimer = null; }
+    setError("");
+    const lyricsText = lyrics.value.trim();
+    const feelingText = feeling.value.trim();
+    const key = apiKey.value.trim();
+    if (!lyricsText) { setError(t("needLyrics")); lyrics.focus(); return; }
+    if (!feelingText) { setError(t("needFeeling")); feeling.focus(); return; }
+    if (!key) { apiPanel.open = true; apiKey.focus(); setError(t("needKey")); return; }
+    if (!baseURL.value.trim()) { apiPanel.open = true; baseURL.focus(); setError(t("needBase")); return; }
+    if (!model.value.trim()) { apiPanel.open = true; model.focus(); setError(t("needModel")); return; }
+    resetResult();
+    errorBox.hidden = true;
+    generateBtn.disabled = true;
+    setGenState("working");
+    setSession("busy");
+    setProgress(2, "Opening the lab", "Sending the brief to your model.");
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          lyrics: lyricsText,
+          style: feelingText,
+          baseURL: baseURL.value.trim(),
+          apiKey: key,
+          model: model.value.trim(),
+          voice: $("voice").value,
+          mix: {
+            vocal_gain_db: Number(mixVocal.value),
+            harmony_gain_db: Number(mixHarmony.value),
+            instrumental_gain_db: Number(mixInst.value),
+          },
+        }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.error || `HTTP ${response.status}`);
+      currentJob = { id: data.jobId };
+      setProgress(4, "Composing", "Waiting for the first response.");
+      pollJob(data.jobId);
+    } catch (error) {
+      generateBtn.disabled = false;
+      setGenState("idle");
+      setSession("error");
+      setProgress(0, "The room is quiet.", "Nothing was rendered.");
+      setError(String(error.message || error));
+    }
+  }
+
+  function applyLanguage() {
+    const s = STRINGS[lang];
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+    document.title = s.docTitle;
+    document.querySelectorAll(".lang-switch button").forEach((b) => b.classList.toggle("active", b.dataset.lang === lang));
+    setText("localLabel", s.local);
+    setText("eyebrow", s.eyebrow);
+    setHTML("page-title", s.title);
+    setHTML("lede", s.lede);
+    setText("lyricsLabel", s.lyricsLabel);
+    setText("feelingLabel", s.feelingLabel);
+    setText("feelingNote", s.feelingNote);
+    setText("sampleBtn", s.sample);
+    setText("voiceLabel", s.voiceLabel);
+    setText("voiceFemale", s.voiceFemale);
+    setText("voiceMale", s.voiceMale);
+    setHTML("voiceHint", s.voiceHint);
+    setText("mixLabel", s.mixLabel);
+    setText("mixReset", s.mixReset);
+    setText("mixNote", s.mixNote);
+    const vocalLabel = $("mixVocalLabel");
+    const harmonyLabel = $("mixHarmonyLabel");
+    const instLabel = $("mixInstLabel");
+    vocalLabel.childNodes[0].nodeValue = s.mixVocal + " ";
+    harmonyLabel.childNodes[0].nodeValue = s.mixHarmony + " ";
+    instLabel.childNodes[0].nodeValue = s.mixInst + " ";
+    updateMixOutputs();
+    setText("apiSettingsLabel", s.apiSettings);
+    setText("apiSummaryState", s.apiState);
+    setText("baseLabel", s.baseLabel);
+    setText("modelLabel", s.modelLabel);
+    setText("keyLabel", s.keyLabel);
+    setText("testBtn", s.test);
+    setHTML("privacyNote", s.privacy);
+    setText("sessionLabel", s.sessionLabel);
+    setText("errorTitle", s.errorTitle);
+    setText("resultReady", s.resultReady);
+    setHTML("footerBuilt", s.footerBuilt);
+    setHTML("footerPrivacy", s.footerPrivacy);
+    lyrics.placeholder = s.lyricsPh;
+    feeling.placeholder = s.feelingPh;
+    $("voice").setAttribute("aria-label", s.voiceLabel);
+    $("revealKey").textContent = keyVisible ? s.hideKey : s.showKey;
+    if (!lastResult) setText("sessionFoot", s.sessionFootIdle);
+    updateCount();
+    renderSession();
+    renderProgress();
+    renderTestStatus();
+    renderGenerateLabel();
+    if (lastResult && !result.hidden) renderResult(lastResult);
+  }
+
+  const SAMPLE_LYRICS = [
+    "Streetlights hum on an empty street",
+    "I count the cracks beneath my feet",
+    "Your coat is gone but the hallway smells like rain",
+    "I keep the porch light on again",
+    "",
+    "Morning comes with a quiet ache",
+    "I fold the sheets that we never made",
+    "The radio plays what it always plays",
+    "And I sing along a beat too late",
+    "",
+    "Maybe the night is a door left open",
+    "Maybe the dark is kinder than it seems",
+    "",
+    "Paper lanterns in the rain",
+    "Burning slow and going out again",
+    "Hold the light a little longer",
+    "Let the quiet pull me under",
+    "",
+    "Call it a season, call it a ghost",
+    "I'm learning how to miss you most",
+  ].join("\n");
+  const SAMPLE_STYLE = "A bittersweet English indie-pop song at a walking pace. Warm upright piano and clean electric guitar, a bass line that actually walks, brushed drums in the verses and a wider, brighter chorus. The lead vocal should feel intimate and a little tired; bring in a low harmony only on the choruses. Let the final chorus open up without becoming a wall of sound.";
+
+  lyrics.addEventListener("input", updateCount);
+  [mixVocal, mixHarmony, mixInst].forEach((el) => el.addEventListener("input", updateMixOutputs));
+  $("mixReset").addEventListener("click", resetMix);
+  $("sampleBtn").addEventListener("click", () => {
+    if (lyrics.value.trim() && !window.confirm(t("replaceSample"))) return;
+    lyrics.value = SAMPLE_LYRICS;
+    feeling.value = SAMPLE_STYLE;
+    updateCount();
+    lyrics.focus();
+  });
+
+  $("revealKey").addEventListener("click", () => {
+    keyVisible = !keyVisible;
+    apiKey.type = keyVisible ? "text" : "password";
+    $("revealKey").textContent = keyVisible ? t("hideKey") : t("showKey");
+  });
+
+  document.querySelectorAll(".lang-switch button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.dataset.lang === lang) return;
+      lang = btn.dataset.lang;
+      applyLanguage();
+    });
+  });
+
+  testBtn.addEventListener("click", testConnection);
+  $("songForm").addEventListener("submit", generate);
+  [lyrics, feeling].forEach((el) => {
+    el.addEventListener("keydown", (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key === "Enter") $("songForm").requestSubmit();
+    });
+  });
+
+  fetch("/api/config", { cache: "no-store" }).then((r) => r.json()).then((cfg) => {
+    if (cfg.defaultBaseURL && baseURL.value === "https://api.openai.com/v1") baseURL.value = cfg.defaultBaseURL;
+    if (cfg.defaultModel && model.value === "gpt-4.1-mini") model.value = cfg.defaultModel;
+  }).catch(() => {});
+
+  applyLanguage();
+  setProgress(0);
+  setSession("idle");
+  setGenState("idle");
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,2890 @@
+{
+  "title": "Paper Lanterns",
+  "bpm": 104,
+  "key": "D major",
+  "time_signature": "4/4",
+  "voice": "female",
+  "sections": [
+    {
+      "name": "Intro",
+      "bars": 4,
+      "energy": 0.18,
+      "description": "solo piano, a little room tone"
+    },
+    {
+      "name": "Verse 1",
+      "bars": 8,
+      "energy": 0.4,
+      "description": "intimate verse, bass enters, brushed drums"
+    },
+    {
+      "name": "Pre-Chorus 1",
+      "bars": 4,
+      "energy": 0.58,
+      "description": "build, no crash yet"
+    },
+    {
+      "name": "Chorus 1",
+      "bars": 8,
+      "energy": 0.82,
+      "description": "open drums, harmony, brighter keys"
+    },
+    {
+      "name": "Interlude",
+      "bars": 2,
+      "energy": 0.3,
+      "description": "one breath, guitar and keys"
+    },
+    {
+      "name": "Verse 2",
+      "bars": 8,
+      "energy": 0.48,
+      "description": "fuller verse, steady bass"
+    },
+    {
+      "name": "Pre-Chorus 2",
+      "bars": 4,
+      "energy": 0.65,
+      "description": "drums build through the second half"
+    },
+    {
+      "name": "Chorus 2",
+      "bars": 8,
+      "energy": 0.9,
+      "description": "bigger chorus, harmony"
+    },
+    {
+      "name": "Bridge",
+      "bars": 4,
+      "energy": 0.55,
+      "description": "half-time, leave space"
+    },
+    {
+      "name": "Final Chorus",
+      "bars": 8,
+      "energy": 1.0,
+      "description": "last lift, all voices"
+    },
+    {
+      "name": "Outro",
+      "bars": 4,
+      "energy": 0.22,
+      "description": "piano and a long last line"
+    }
+  ],
+  "chords": [
+    {
+      "bar": 0,
+      "symbol": "Dadd9",
+      "notes": [
+        50,
+        57,
+        62,
+        64
+      ]
+    },
+    {
+      "bar": 1,
+      "symbol": "A/C#",
+      "notes": [
+        49,
+        57,
+        61,
+        64
+      ]
+    },
+    {
+      "bar": 2,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 3,
+      "symbol": "Gmaj7",
+      "notes": [
+        55,
+        59,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 4,
+      "symbol": "D",
+      "notes": [
+        50,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 5,
+      "symbol": "A/C#",
+      "notes": [
+        49,
+        57,
+        61,
+        64
+      ]
+    },
+    {
+      "bar": 6,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 7,
+      "symbol": "Gmaj7",
+      "notes": [
+        55,
+        59,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 8,
+      "symbol": "D/F#",
+      "notes": [
+        54,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 9,
+      "symbol": "Em7",
+      "notes": [
+        52,
+        55,
+        59,
+        62
+      ]
+    },
+    {
+      "bar": 10,
+      "symbol": "Asus4",
+      "notes": [
+        45,
+        52,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 11,
+      "symbol": "A",
+      "notes": [
+        45,
+        52,
+        57,
+        61
+      ]
+    },
+    {
+      "bar": 12,
+      "symbol": "G",
+      "notes": [
+        55,
+        59,
+        62,
+        67
+      ]
+    },
+    {
+      "bar": 13,
+      "symbol": "A",
+      "notes": [
+        45,
+        52,
+        57,
+        61
+      ]
+    },
+    {
+      "bar": 14,
+      "symbol": "F#m7",
+      "notes": [
+        54,
+        57,
+        61,
+        64
+      ]
+    },
+    {
+      "bar": 15,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 16,
+      "symbol": "D",
+      "notes": [
+        50,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 17,
+      "symbol": "A/C#",
+      "notes": [
+        49,
+        57,
+        61,
+        64
+      ]
+    },
+    {
+      "bar": 18,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 19,
+      "symbol": "Gmaj7",
+      "notes": [
+        55,
+        59,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 20,
+      "symbol": "D/F#",
+      "notes": [
+        54,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 21,
+      "symbol": "Em7",
+      "notes": [
+        52,
+        55,
+        59,
+        62
+      ]
+    },
+    {
+      "bar": 22,
+      "symbol": "Asus4",
+      "notes": [
+        45,
+        52,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 23,
+      "symbol": "A",
+      "notes": [
+        45,
+        52,
+        57,
+        61
+      ]
+    },
+    {
+      "bar": 24,
+      "symbol": "Dadd9",
+      "notes": [
+        50,
+        57,
+        62,
+        64
+      ]
+    },
+    {
+      "bar": 25,
+      "symbol": "Asus4",
+      "notes": [
+        45,
+        52,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 26,
+      "symbol": "D",
+      "notes": [
+        50,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 27,
+      "symbol": "A/C#",
+      "notes": [
+        49,
+        57,
+        61,
+        64
+      ]
+    },
+    {
+      "bar": 28,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 29,
+      "symbol": "Gmaj7",
+      "notes": [
+        55,
+        59,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 30,
+      "symbol": "D/F#",
+      "notes": [
+        54,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 31,
+      "symbol": "Em7",
+      "notes": [
+        52,
+        55,
+        59,
+        62
+      ]
+    },
+    {
+      "bar": 32,
+      "symbol": "Asus4",
+      "notes": [
+        45,
+        52,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 33,
+      "symbol": "A",
+      "notes": [
+        45,
+        52,
+        57,
+        61
+      ]
+    },
+    {
+      "bar": 34,
+      "symbol": "G",
+      "notes": [
+        55,
+        59,
+        62,
+        67
+      ]
+    },
+    {
+      "bar": 35,
+      "symbol": "A",
+      "notes": [
+        45,
+        52,
+        57,
+        61
+      ]
+    },
+    {
+      "bar": 36,
+      "symbol": "F#m7",
+      "notes": [
+        54,
+        57,
+        61,
+        64
+      ]
+    },
+    {
+      "bar": 37,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 38,
+      "symbol": "D",
+      "notes": [
+        50,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 39,
+      "symbol": "A/C#",
+      "notes": [
+        49,
+        57,
+        61,
+        64
+      ]
+    },
+    {
+      "bar": 40,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 41,
+      "symbol": "Gmaj7",
+      "notes": [
+        55,
+        59,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 42,
+      "symbol": "D/F#",
+      "notes": [
+        54,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 43,
+      "symbol": "Em7",
+      "notes": [
+        52,
+        55,
+        59,
+        62
+      ]
+    },
+    {
+      "bar": 44,
+      "symbol": "Asus4",
+      "notes": [
+        45,
+        52,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 45,
+      "symbol": "A",
+      "notes": [
+        45,
+        52,
+        57,
+        61
+      ]
+    },
+    {
+      "bar": 46,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 47,
+      "symbol": "Gmaj7",
+      "notes": [
+        55,
+        59,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 48,
+      "symbol": "D/F#",
+      "notes": [
+        54,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 49,
+      "symbol": "A",
+      "notes": [
+        45,
+        52,
+        57,
+        61
+      ]
+    },
+    {
+      "bar": 50,
+      "symbol": "D",
+      "notes": [
+        50,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 51,
+      "symbol": "A/C#",
+      "notes": [
+        49,
+        57,
+        61,
+        64
+      ]
+    },
+    {
+      "bar": 52,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 53,
+      "symbol": "Gmaj7",
+      "notes": [
+        55,
+        59,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 54,
+      "symbol": "D/F#",
+      "notes": [
+        54,
+        57,
+        62,
+        66
+      ]
+    },
+    {
+      "bar": 55,
+      "symbol": "Em7",
+      "notes": [
+        52,
+        55,
+        59,
+        62
+      ]
+    },
+    {
+      "bar": 56,
+      "symbol": "Asus4",
+      "notes": [
+        45,
+        52,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 57,
+      "symbol": "A",
+      "notes": [
+        45,
+        52,
+        57,
+        61
+      ]
+    },
+    {
+      "bar": 58,
+      "symbol": "Dadd9",
+      "notes": [
+        50,
+        57,
+        62,
+        64
+      ]
+    },
+    {
+      "bar": 59,
+      "symbol": "A/C#",
+      "notes": [
+        49,
+        57,
+        61,
+        64
+      ]
+    },
+    {
+      "bar": 60,
+      "symbol": "Bm7",
+      "notes": [
+        47,
+        54,
+        57,
+        62
+      ]
+    },
+    {
+      "bar": 61,
+      "symbol": "Dadd9",
+      "notes": [
+        50,
+        57,
+        62,
+        64
+      ]
+    }
+  ],
+  "vocal": {
+    "lead": [
+      {
+        "bar": 4,
+        "beat": 0,
+        "text": "Streetlights hum on an empty street",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 57
+          }
+        ]
+      },
+      {
+        "bar": 5,
+        "beat": 0,
+        "text": "I count the cracks beneath my feet",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 61
+          }
+        ]
+      },
+      {
+        "bar": 6,
+        "beat": 0,
+        "text": "Your coat is gone but the hallway smells like rain",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 55
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.25,
+            "midi": 62
+          },
+          {
+            "beat": 3.75,
+            "duration": 0.25,
+            "midi": 59
+          },
+          {
+            "beat": 4,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 4.5,
+            "duration": 2.5,
+            "midi": 59
+          }
+        ]
+      },
+      {
+        "bar": 8,
+        "beat": 0,
+        "text": "I keep the porch light on again",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 3.5,
+            "duration": 1.0,
+            "midi": 57
+          }
+        ]
+      },
+      {
+        "bar": 10,
+        "beat": 0,
+        "text": "I keep the porch light on again",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 3.5,
+            "duration": 1.0,
+            "midi": 57
+          }
+        ]
+      },
+      {
+        "bar": 12,
+        "beat": 0,
+        "text": "Maybe the night is a door left open",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 4,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 4.5,
+            "duration": 1.5,
+            "midi": 64
+          }
+        ]
+      },
+      {
+        "bar": 14,
+        "beat": 0,
+        "text": "Maybe the dark is kinder than it seems",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 4,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 4.5,
+            "duration": 2.0,
+            "midi": 62
+          }
+        ]
+      },
+      {
+        "bar": 16,
+        "beat": 0,
+        "text": "Paper lanterns in the rain",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 2.25,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.5,
+            "duration": 2.0,
+            "midi": 64
+          }
+        ]
+      },
+      {
+        "bar": 18,
+        "beat": 0,
+        "text": "Burning slow and going out again",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 2,
+            "duration": 0.75,
+            "midi": 64
+          },
+          {
+            "beat": 2.75,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.25,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 3.75,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 4.25,
+            "duration": 1.75,
+            "midi": 69
+          }
+        ]
+      },
+      {
+        "bar": 20,
+        "beat": 0,
+        "text": "Hold the light a little longer",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 69
+          }
+        ]
+      },
+      {
+        "bar": 22,
+        "beat": 0,
+        "text": "Let the quiet pull me under",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 73
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 71
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 62
+          }
+        ]
+      },
+      {
+        "bar": 26,
+        "beat": 0,
+        "text": "Morning comes with a quiet ache",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 59
+          }
+        ]
+      },
+      {
+        "bar": 27,
+        "beat": 0,
+        "text": "I fold the sheets that we never made",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 3,
+            "duration": 0.25,
+            "midi": 59
+          },
+          {
+            "beat": 3.25,
+            "duration": 0.25,
+            "midi": 57
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 57
+          }
+        ]
+      },
+      {
+        "bar": 28,
+        "beat": 0,
+        "text": "The radio plays what it always plays",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 4,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 4.5,
+            "duration": 2.0,
+            "midi": 57
+          }
+        ]
+      },
+      {
+        "bar": 30,
+        "beat": 0,
+        "text": "And I sing along a beat too late",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.25,
+            "midi": 61
+          },
+          {
+            "beat": 3.25,
+            "duration": 0.25,
+            "midi": 59
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 57
+          }
+        ]
+      },
+      {
+        "bar": 32,
+        "beat": 0,
+        "text": "And I sing along a beat too late",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 57
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.25,
+            "midi": 61
+          },
+          {
+            "beat": 3.25,
+            "duration": 0.25,
+            "midi": 59
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 57
+          }
+        ]
+      },
+      {
+        "bar": 34,
+        "beat": 0,
+        "text": "Maybe the night is a door left open",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 4,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 4.5,
+            "duration": 1.5,
+            "midi": 64
+          }
+        ]
+      },
+      {
+        "bar": 36,
+        "beat": 0,
+        "text": "Maybe the dark is kinder than it seems",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 4,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 4.5,
+            "duration": 2.0,
+            "midi": 62
+          }
+        ]
+      },
+      {
+        "bar": 38,
+        "beat": 0,
+        "text": "Paper lanterns in the rain",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 2.25,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.5,
+            "duration": 2.0,
+            "midi": 64
+          }
+        ]
+      },
+      {
+        "bar": 40,
+        "beat": 0,
+        "text": "Burning slow and going out again",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 2,
+            "duration": 0.75,
+            "midi": 64
+          },
+          {
+            "beat": 2.75,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.25,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 3.75,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 4.25,
+            "duration": 1.75,
+            "midi": 69
+          }
+        ]
+      },
+      {
+        "bar": 42,
+        "beat": 0,
+        "text": "Hold the light a little longer",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 69
+          }
+        ]
+      },
+      {
+        "bar": 44,
+        "beat": 0,
+        "text": "Let the quiet pull me under",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 73
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 71
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 62
+          }
+        ]
+      },
+      {
+        "bar": 46,
+        "beat": 0,
+        "text": "Call it a season, call it a ghost",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 64
+          }
+        ]
+      },
+      {
+        "bar": 47,
+        "beat": 2,
+        "text": "I'm learning how to miss you most",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3.5,
+            "duration": 1.5,
+            "midi": 66
+          }
+        ]
+      },
+      {
+        "bar": 49,
+        "beat": 0,
+        "text": "Call it a season, call it a ghost",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 2,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 59
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.25,
+            "midi": 66
+          },
+          {
+            "beat": 3.75,
+            "duration": 0.25,
+            "midi": 64
+          }
+        ]
+      },
+      {
+        "bar": 50,
+        "beat": 0,
+        "text": "Paper lanterns in the rain",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 2.25,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.5,
+            "duration": 2.0,
+            "midi": 64
+          }
+        ]
+      },
+      {
+        "bar": 52,
+        "beat": 0,
+        "text": "Burning slow and going out again",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 2,
+            "duration": 0.75,
+            "midi": 64
+          },
+          {
+            "beat": 2.75,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.25,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 3.75,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 4.25,
+            "duration": 1.75,
+            "midi": 69
+          }
+        ]
+      },
+      {
+        "bar": 54,
+        "beat": 0,
+        "text": "Hold the light a little longer",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 69
+          }
+        ]
+      },
+      {
+        "bar": 56,
+        "beat": 0,
+        "text": "Let the quiet pull me under",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 69
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 71
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 73
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 71
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 64
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 62
+          }
+        ]
+      },
+      {
+        "bar": 58,
+        "beat": 0,
+        "text": "Paper lanterns in the rain",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 1,
+            "midi": 69
+          },
+          {
+            "beat": 1,
+            "duration": 1,
+            "midi": 66
+          },
+          {
+            "beat": 2,
+            "duration": 1,
+            "midi": 69
+          },
+          {
+            "beat": 3,
+            "duration": 1,
+            "midi": 71
+          },
+          {
+            "beat": 4,
+            "duration": 1,
+            "midi": 69
+          },
+          {
+            "beat": 5,
+            "duration": 1,
+            "midi": 66
+          },
+          {
+            "beat": 6,
+            "duration": 3,
+            "midi": 64
+          }
+        ]
+      }
+    ],
+    "harmony": [
+      {
+        "bar": 16,
+        "beat": 0,
+        "text": "Paper lanterns in the rain",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 2.25,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.5,
+            "duration": 2.0,
+            "midi": 61
+          }
+        ]
+      },
+      {
+        "bar": 18,
+        "beat": 0,
+        "text": "Burning slow and going out again",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.75,
+            "midi": 61
+          },
+          {
+            "beat": 2.75,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.25,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.75,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 4.25,
+            "duration": 1.75,
+            "midi": 66
+          }
+        ]
+      },
+      {
+        "bar": 20,
+        "beat": 0,
+        "text": "Hold the light a little longer",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 62
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 66
+          }
+        ]
+      },
+      {
+        "bar": 22,
+        "beat": 0,
+        "text": "Let the quiet pull me under",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 67
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 59
+          }
+        ]
+      },
+      {
+        "bar": 38,
+        "beat": 0,
+        "text": "Paper lanterns in the rain",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 2.25,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.5,
+            "duration": 2.0,
+            "midi": 61
+          }
+        ]
+      },
+      {
+        "bar": 40,
+        "beat": 0,
+        "text": "Burning slow and going out again",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.75,
+            "midi": 61
+          },
+          {
+            "beat": 2.75,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.25,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.75,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 4.25,
+            "duration": 1.75,
+            "midi": 66
+          }
+        ]
+      },
+      {
+        "bar": 42,
+        "beat": 0,
+        "text": "Hold the light a little longer",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 62
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 66
+          }
+        ]
+      },
+      {
+        "bar": 44,
+        "beat": 0,
+        "text": "Let the quiet pull me under",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 67
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 59
+          }
+        ]
+      },
+      {
+        "bar": 50,
+        "beat": 0,
+        "text": "Paper lanterns in the rain",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 2.25,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.5,
+            "duration": 2.0,
+            "midi": 61
+          }
+        ]
+      },
+      {
+        "bar": 52,
+        "beat": 0,
+        "text": "Burning slow and going out again",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 0.5,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 1,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 2,
+            "duration": 0.75,
+            "midi": 61
+          },
+          {
+            "beat": 2.75,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.25,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3.75,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 4.25,
+            "duration": 1.75,
+            "midi": 66
+          }
+        ]
+      },
+      {
+        "bar": 54,
+        "beat": 0,
+        "text": "Hold the light a little longer",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 62
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 66
+          }
+        ]
+      },
+      {
+        "bar": 56,
+        "beat": 0,
+        "text": "Let the quiet pull me under",
+        "notes": [
+          {
+            "beat": 0,
+            "duration": 0.75,
+            "midi": 66
+          },
+          {
+            "beat": 0.75,
+            "duration": 0.5,
+            "midi": 67
+          },
+          {
+            "beat": 1.25,
+            "duration": 0.5,
+            "midi": 69
+          },
+          {
+            "beat": 1.75,
+            "duration": 0.75,
+            "midi": 67
+          },
+          {
+            "beat": 2.5,
+            "duration": 0.5,
+            "midi": 66
+          },
+          {
+            "beat": 3,
+            "duration": 0.5,
+            "midi": 62
+          },
+          {
+            "beat": 3.5,
+            "duration": 0.5,
+            "midi": 61
+          },
+          {
+            "beat": 4,
+            "duration": 2.0,
+            "midi": 59
+          }
+        ]
+      }
+    ]
+  },
+  "tracks": [
+    {
+      "name": "Piano",
+      "role": "chords",
+      "instrument": "piano",
+      "program": 0,
+      "gain_db": -10,
+      "patterns": {
+        "Intro": "broken_8",
+        "Verse 1": "block",
+        "Pre-Chorus 1": "broken_8",
+        "Chorus 1": "stabs_8",
+        "Interlude": "arpeggio_8",
+        "Verse 2": "block",
+        "Pre-Chorus 2": "broken_8",
+        "Chorus 2": "stabs_8",
+        "Bridge": "sustained",
+        "Final Chorus": "stabs_8",
+        "Outro": "block"
+      }
+    },
+    {
+      "name": "Clean Guitar",
+      "role": "chords",
+      "instrument": "electric guitar",
+      "program": 27,
+      "gain_db": -14,
+      "patterns": {
+        "Intro": "none",
+        "Verse 1": "pulse_8",
+        "Pre-Chorus 1": "arpeggio_8",
+        "Chorus 1": "pulse_8",
+        "Interlude": "arpeggio_8",
+        "Verse 2": "pulse_8",
+        "Pre-Chorus 2": "arpeggio_8",
+        "Chorus 2": "pulse_8",
+        "Bridge": "arpeggio_8",
+        "Final Chorus": "pulse_8",
+        "Outro": "none"
+      }
+    },
+    {
+      "name": "Bass",
+      "role": "bass",
+      "instrument": "finger bass",
+      "program": 33,
+      "gain_db": -6,
+      "patterns": {
+        "Intro": "none",
+        "Verse 1": "root_quarter",
+        "Pre-Chorus 1": "root_eighth",
+        "Chorus 1": "syncopated",
+        "Interlude": "root_quarter",
+        "Verse 2": "root_quarter",
+        "Pre-Chorus 2": "root_eighth",
+        "Chorus 2": "syncopated",
+        "Bridge": "walking",
+        "Final Chorus": "syncopated",
+        "Outro": "root_quarter"
+      }
+    },
+    {
+      "name": "Strings",
+      "role": "chords",
+      "instrument": "string ensemble",
+      "program": 48,
+      "gain_db": -17,
+      "patterns": {
+        "Intro": "sustained",
+        "Verse 1": "none",
+        "Pre-Chorus 1": "sustained",
+        "Chorus 1": "sustained",
+        "Interlude": "none",
+        "Verse 2": "none",
+        "Pre-Chorus 2": "sustained",
+        "Chorus 2": "sustained",
+        "Bridge": "sustained",
+        "Final Chorus": "sustained",
+        "Outro": "sustained"
+      }
+    },
+    {
+      "name": "Glockenspiel",
+      "role": "texture",
+      "instrument": "glockenspiel",
+      "program": 9,
+      "gain_db": -20,
+      "patterns": {
+        "Intro": "motif",
+        "Verse 1": "none",
+        "Pre-Chorus 1": "none",
+        "Chorus 1": "motif",
+        "Interlude": "arp_high",
+        "Verse 2": "none",
+        "Pre-Chorus 2": "none",
+        "Chorus 2": "motif",
+        "Bridge": "none",
+        "Final Chorus": "motif",
+        "Outro": "motif"
+      }
+    },
+    {
+      "name": "Drums",
+      "role": "drums",
+      "instrument": "drums",
+      "program": 0,
+      "gain_db": -4,
+      "patterns": {
+        "Intro": "none",
+        "Verse 1": "pop_verse",
+        "Pre-Chorus 1": "build",
+        "Chorus 1": "pop_chorus",
+        "Interlude": "none",
+        "Verse 2": "pop_verse",
+        "Pre-Chorus 2": "build",
+        "Chorus 2": "pop_chorus",
+        "Bridge": "half_time",
+        "Final Chorus": "pop_chorus",
+        "Outro": "outro"
+      }
+    }
+  ],
+  "mix": {
+    "vocal_gain_db": 2,
+    "harmony_gain_db": -12,
+    "instrumental_gain_db": -1.5
+  },
+  "harmony_voice": "female"
+}

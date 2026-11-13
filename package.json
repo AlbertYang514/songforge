@@ -1,0 +1,22 @@
+{
+  "name": "songforge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A small local music laboratory: lyrics and a feeling in, a finished song out.",
+  "license": "MIT",
+  "author": "SongForge contributors",
+  "keywords": [
+    "music",
+    "llm",
+    "scamp",
+    "chimera",
+    "ffmpeg",
+    "local-first"
+  ],
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

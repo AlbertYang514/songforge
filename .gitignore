@@ -1,0 +1,21 @@
+.venv/
+node_modules/
+.DS_Store
+*.log
+__pycache__/
+*.pyc
+
+# Rendered sessions are local artefacts. Two lightweight example previews are
+# committed so the page has something to play before an API key is added.
+output/*
+!output/paper-lanterns/
+!output/paper-lanterns-female/
+output/paper-lanterns/*
+output/paper-lanterns-female/*
+!output/paper-lanterns/arrangement.json
+!output/paper-lanterns/song.mp3
+!output/paper-lanterns-female/arrangement.json
+!output/paper-lanterns-female/song.mp3
+
+# Release archives / local staging
+dist/
